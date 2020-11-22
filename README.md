@@ -1,7 +1,7 @@
 # kvmwc
 KVM Windows Console
 
-I created this project for people who would like to have some kind of "windows console" for their KVM hypervisors. This project uses program called "plink.exe" which was created by Simon Tatham. 
+I created this project for people who would like to have some kind of "windows console" for their KVM hypervisors. It is very simple program and does not contain any special features. This project uses program called "plink.exe" which was created by Simon Tatham. 
 
 Prerequisities:
 =======================================
