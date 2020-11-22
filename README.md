@@ -8,10 +8,10 @@ Prerequisities:
 
 1.) Make sure you have KVM deployed on your machine
 
-2.) to /etc/sudoers (use "visudo" command to prevent mistakes) add following lines:
-  <username_here> ALL=NOPASSWD: /bin/virsh
-  <username_here> ALL=NOPASSWD: /usr/bin/virsh
-  <username_here> ALL=NOPASSWD: /usr/bin/virt-install
+2.) to /etc/sudoers (use "visudo" command to prevent mistakes) add following lines:      
+<username_here> ALL=NOPASSWD: /bin/virsh      
+<username_here> ALL=NOPASSWD: /usr/bin/virsh      
+<username_here> ALL=NOPASSWD: /usr/bin/virt-install      
   
 3.) Download plink.exe and place it to the program root
 
