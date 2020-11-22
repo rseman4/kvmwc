@@ -1,0 +1,12 @@
+C:\Users\rseman.ERNETES\Desktop\KVMWC\KVMWC\bin\Debug\KVMWC.exe.config
+C:\Users\rseman.ERNETES\Desktop\KVMWC\KVMWC\bin\Debug\KVMWC.exe
+C:\Users\rseman.ERNETES\Desktop\KVMWC\KVMWC\bin\Debug\KVMWC.pdb
+C:\Users\rseman.ERNETES\Desktop\KVMWC\KVMWC\obj\Debug\KVMWC.MainForm.resources
+C:\Users\rseman.ERNETES\Desktop\KVMWC\KVMWC\obj\Debug\KVMWC.csproj.GenerateResource.Cache
+C:\Users\rseman.ERNETES\Desktop\KVMWC\KVMWC\obj\Debug\KVMWC.exe
+C:\Users\rseman.ERNETES\Desktop\KVMWC\KVMWC\obj\Debug\KVMWC.pdb
+C:\Users\rseman.ERNETES\Desktop\KVMWC\KVMWC\obj\Debug\KVMWC.Images.resources
+C:\Users\rseman.ERNETES\Desktop\KVMWC\KVMWC\obj\Debug\KVMWC.ProgramForm.resources
+C:\Users\rseman.ERNETES\Desktop\KVMWC\KVMWC\obj\Debug\KVMWC.NewMachineForm.resources
+C:\Users\rseman.ERNETES\Desktop\KVMWC\KVMWC\obj\Debug\KVMWC.AboutForm.resources
+C:\Users\rseman.ERNETES\Desktop\KVMWC\KVMWC\obj\Debug\KVMWC.csprojResolveAssemblyReference.cache

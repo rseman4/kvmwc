@@ -1,0 +1,36 @@
+		void ButtonStartMachineClick(object sender, EventArgs e)
+		{
+			string vmName = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+			string[] commands = {"sudo virsh start " + vmName};
+			string output = ConnectToServerAndCommitCommand(HOST, USERNAME, PASSWORD, commands);
+			UpdateVirtualMachineList();
+		}
+		void ButtonForceShutdownMachineClick(object sender, EventArgs e)
+		{
+			string vmName = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+			string[] commands = {"sudo virsh destroy " + vmName};
+			string output = ConnectToServerAndCommitCommand(HOST, USERNAME, PASSWORD, commands);
+			UpdateVirtualMachineList();
+		}
+		void ButtonACPIShutdownMachineClick(object sender, EventArgs e)
+		{
+			string vmName = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+			string acpiShutdown = "sudo virsh shutdown " + vmName + " --mode acpi";
+			string[] commands = {acpiShutdown};
+			string output = ConnectToServerAndCommitCommand(HOST, USERNAME, PASSWORD, commands);
+			UpdateVirtualMachineList();
+		}
+		void ButtonRestartMachineClick(object sender, EventArgs e)
+		{
+			string vmName = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+			string[] commands = {"sudo virsh reset " + vmName};
+			string output = ConnectToServerAndCommitCommand(HOST, USERNAME, PASSWORD, commands);
+			UpdateVirtualMachineList();
+		}
+		void ButtonCreateClick(object sender, EventArgs e)
+		{
+			Button btnSender = (Button)sender;
+		    Point ptLowerLeft = new Point(0, btnSender.Height);
+		    ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);           
+			contextMenuStrip1.Show(ptLowerLeft);
+		}
