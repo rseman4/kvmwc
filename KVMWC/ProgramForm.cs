@@ -72,7 +72,7 @@ namespace KVMWC
 			}
 		}
 		
-		public void CreateNewVM(string[] commands)
+		public void ExecCommand(string[] commands)
 		{
 			string output = ConnectToServerAndCommitCommand(HOST, USERNAME, PASSWORD, commands);
 			UpdateVirtualMachineList();
@@ -324,6 +324,19 @@ namespace KVMWC
 			NewMachineForm newMachineForm = new NewMachineForm();
 			newMachineForm.Show();
 		}
+		void ToolStripButtonDuplicateVMClick(object sender, EventArgs e)
+		{
+			if(dataGridView1.SelectedRows[0].Cells[1].Value.ToString().Contains("running"))
+			{
+				MessageBox.Show("Domain with devices to clone must be paused or shutoff.", "Error");
+			}
+			else
+			{
+				string vmName = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+				Form duplicateVmForm = new DuplicateMachineForm(vmName);
+				duplicateVmForm.Show();
+			}
+		}
 		void ToolStripButtonDeleteVMClick(object sender, EventArgs e)
 		{
 			string vmName = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
@@ -435,6 +448,5 @@ namespace KVMWC
 		        MessageBox.Show("No data to be exported.", "Info");  
 		    }  
 		}
-		
 	}
 }

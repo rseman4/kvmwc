@@ -104,7 +104,7 @@ namespace KVMWC
 			else
 			{
 				ProgramForm programForm = new ProgramForm();
-				programForm.CreateNewVM(ComposeCommands());
+				programForm.ExecCommand(ComposeCommands());
 				this.Close();
 			}
 		}

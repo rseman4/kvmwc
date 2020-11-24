@@ -72,6 +72,7 @@ namespace KVMWC
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.TreeView treeView1;
+		private System.Windows.Forms.ToolStripButton toolStripButtonDuplicateVM;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -96,8 +97,8 @@ namespace KVMWC
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProgramForm));
-			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Disks");
-			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("CDs");
+			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Disks");
+			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("CDs");
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItemNewConnection = new System.Windows.Forms.ToolStripMenuItem();
@@ -156,6 +157,7 @@ namespace KVMWC
 			this.labelVMUUID = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.richTextBoxVMLog = new System.Windows.Forms.RichTextBox();
+			this.toolStripButtonDuplicateVM = new System.Windows.Forms.ToolStripButton();
 			this.menuStrip1.SuspendLayout();
 			this.contextMenuStrip1.SuspendLayout();
 			this.toolStripContainer1.SuspendLayout();
@@ -227,7 +229,7 @@ namespace KVMWC
 			// toolStripMenuItemRefreshVMList
 			// 
 			this.toolStripMenuItemRefreshVMList.Name = "toolStripMenuItemRefreshVMList";
-			this.toolStripMenuItemRefreshVMList.Size = new System.Drawing.Size(181, 26);
+			this.toolStripMenuItemRefreshVMList.Size = new System.Drawing.Size(162, 26);
 			this.toolStripMenuItemRefreshVMList.Text = "Refresh (F5)";
 			this.toolStripMenuItemRefreshVMList.Click += new System.EventHandler(this.ToolStripMenuItemRefreshVMListClick);
 			// 
@@ -242,7 +244,7 @@ namespace KVMWC
 			// exportListToolStripMenuItem
 			// 
 			this.exportListToolStripMenuItem.Name = "exportListToolStripMenuItem";
-			this.exportListToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+			this.exportListToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
 			this.exportListToolStripMenuItem.Text = "Export CSV";
 			this.exportListToolStripMenuItem.Click += new System.EventHandler(this.ExportListToolStripMenuItemClick);
 			// 
@@ -422,6 +424,7 @@ namespace KVMWC
 			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
 			this.toolStripSplitButtonNew,
 			this.toolStripButtonEditVM,
+			this.toolStripButtonDuplicateVM,
 			this.toolStripButtonDeleteVM,
 			this.toolStripSeparator2,
 			this.toolStripButtonStartVM,
@@ -609,13 +612,13 @@ namespace KVMWC
 			this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.treeView1.Location = new System.Drawing.Point(3, 18);
 			this.treeView1.Name = "treeView1";
-			treeNode1.Name = "disks";
-			treeNode1.Text = "Disks";
-			treeNode2.Name = "cds";
-			treeNode2.Text = "CDs";
+			treeNode3.Name = "disks";
+			treeNode3.Text = "Disks";
+			treeNode4.Name = "cds";
+			treeNode4.Text = "CDs";
 			this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-			treeNode1,
-			treeNode2});
+			treeNode3,
+			treeNode4});
 			this.treeView1.Size = new System.Drawing.Size(826, 137);
 			this.treeView1.TabIndex = 0;
 			// 
@@ -754,6 +757,17 @@ namespace KVMWC
 			this.richTextBoxVMLog.Size = new System.Drawing.Size(833, 273);
 			this.richTextBoxVMLog.TabIndex = 0;
 			this.richTextBoxVMLog.Text = "This is a test.";
+			// 
+			// toolStripButtonDuplicateVM
+			// 
+			this.toolStripButtonDuplicateVM.Image = global::KVMWC.Images.duplicate;
+			this.toolStripButtonDuplicateVM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.toolStripButtonDuplicateVM.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButtonDuplicateVM.Name = "toolStripButtonDuplicateVM";
+			this.toolStripButtonDuplicateVM.Size = new System.Drawing.Size(220, 27);
+			this.toolStripButtonDuplicateVM.Text = "Duplicate VM";
+			this.toolStripButtonDuplicateVM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.toolStripButtonDuplicateVM.Click += new System.EventHandler(this.ToolStripButtonDuplicateVMClick);
 			// 
 			// ProgramForm
 			// 

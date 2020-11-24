@@ -57,6 +57,10 @@
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ConnectionVariables.cs" />
+    <Compile Include="DuplicateMachineForm.cs" />
+    <Compile Include="DuplicateMachineForm.Designer.cs">
+      <DependentUpon>DuplicateMachineForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Images.Designer.cs">
       <DependentUpon>Images.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -82,6 +86,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DuplicateMachineForm.resx">
+      <DependentUpon>DuplicateMachineForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Images.resx">
       <Generator>ResXFileCodeGenerator</Generator>
