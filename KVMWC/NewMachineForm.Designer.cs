@@ -250,6 +250,7 @@ namespace KVMWC
 			// 
 			// comboBoxNewVMNetworkType
 			// 
+			this.comboBoxNewVMNetworkType.Enabled = false;
 			this.comboBoxNewVMNetworkType.FormattingEnabled = true;
 			this.comboBoxNewVMNetworkType.Items.AddRange(new object[] {
 			"Bridged",
@@ -283,7 +284,7 @@ namespace KVMWC
 			this.textBoxNewVMISOPath.Name = "textBoxNewVMISOPath";
 			this.textBoxNewVMISOPath.Size = new System.Drawing.Size(396, 22);
 			this.textBoxNewVMISOPath.TabIndex = 10;
-			this.textBoxNewVMISOPath.Text = "/srv/install_images/";
+			this.textBoxNewVMISOPath.Text = "/srv/install_images/debian-10.6.0-amd64-xfce-CD-1.iso";
 			// 
 			// textBoxNewVMCPUCores
 			// 
@@ -321,6 +322,8 @@ namespace KVMWC
 			// 
 			// comboBoxNewVMOSVariant
 			// 
+			this.comboBoxNewVMOSVariant.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.comboBoxNewVMOSVariant.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
 			this.comboBoxNewVMOSVariant.FormattingEnabled = true;
 			this.comboBoxNewVMOSVariant.Items.AddRange(new object[] {
 			"win7",
@@ -408,6 +411,8 @@ namespace KVMWC
 			// 
 			// comboBoxNewVMOSType
 			// 
+			this.comboBoxNewVMOSType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.comboBoxNewVMOSType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
 			this.comboBoxNewVMOSType.FormattingEnabled = true;
 			this.comboBoxNewVMOSType.Items.AddRange(new object[] {
 			"Linux",

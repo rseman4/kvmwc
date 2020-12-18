@@ -73,6 +73,8 @@ namespace KVMWC
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.TreeView treeView1;
 		private System.Windows.Forms.ToolStripButton toolStripButtonDuplicateVM;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+		private System.Windows.Forms.ToolStripButton toolStripButtonOpenConsole;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -97,8 +99,8 @@ namespace KVMWC
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProgramForm));
-			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Disks");
-			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("CDs");
+			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Disks");
+			System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("CDs");
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItemNewConnection = new System.Windows.Forms.ToolStripMenuItem();
@@ -132,6 +134,7 @@ namespace KVMWC
 			this.toolStripMenuItemNewVM = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItemNewDisk = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripButtonEditVM = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButtonDuplicateVM = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButtonDeleteVM = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripButtonStartVM = new System.Windows.Forms.ToolStripButton();
@@ -157,7 +160,8 @@ namespace KVMWC
 			this.labelVMUUID = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.richTextBoxVMLog = new System.Windows.Forms.RichTextBox();
-			this.toolStripButtonDuplicateVM = new System.Windows.Forms.ToolStripButton();
+			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripButtonOpenConsole = new System.Windows.Forms.ToolStripButton();
 			this.menuStrip1.SuspendLayout();
 			this.contextMenuStrip1.SuspendLayout();
 			this.toolStripContainer1.SuspendLayout();
@@ -426,6 +430,8 @@ namespace KVMWC
 			this.toolStripButtonEditVM,
 			this.toolStripButtonDuplicateVM,
 			this.toolStripButtonDeleteVM,
+			this.toolStripSeparator3,
+			this.toolStripButtonOpenConsole,
 			this.toolStripSeparator2,
 			this.toolStripButtonStartVM,
 			this.toolStripButtonRestartVM,
@@ -476,6 +482,17 @@ namespace KVMWC
 			this.toolStripButtonEditVM.Size = new System.Drawing.Size(220, 27);
 			this.toolStripButtonEditVM.Text = "Edit VM";
 			this.toolStripButtonEditVM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// toolStripButtonDuplicateVM
+			// 
+			this.toolStripButtonDuplicateVM.Image = global::KVMWC.Images.duplicate;
+			this.toolStripButtonDuplicateVM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.toolStripButtonDuplicateVM.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButtonDuplicateVM.Name = "toolStripButtonDuplicateVM";
+			this.toolStripButtonDuplicateVM.Size = new System.Drawing.Size(220, 27);
+			this.toolStripButtonDuplicateVM.Text = "Duplicate VM";
+			this.toolStripButtonDuplicateVM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.toolStripButtonDuplicateVM.Click += new System.EventHandler(this.ToolStripButtonDuplicateVMClick);
 			// 
 			// toolStripButtonDeleteVM
 			// 
@@ -612,13 +629,13 @@ namespace KVMWC
 			this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.treeView1.Location = new System.Drawing.Point(3, 18);
 			this.treeView1.Name = "treeView1";
-			treeNode3.Name = "disks";
-			treeNode3.Text = "Disks";
-			treeNode4.Name = "cds";
-			treeNode4.Text = "CDs";
+			treeNode5.Name = "disks";
+			treeNode5.Text = "Disks";
+			treeNode6.Name = "cds";
+			treeNode6.Text = "CDs";
 			this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-			treeNode3,
-			treeNode4});
+			treeNode5,
+			treeNode6});
 			this.treeView1.Size = new System.Drawing.Size(826, 137);
 			this.treeView1.TabIndex = 0;
 			// 
@@ -758,16 +775,21 @@ namespace KVMWC
 			this.richTextBoxVMLog.TabIndex = 0;
 			this.richTextBoxVMLog.Text = "This is a test.";
 			// 
-			// toolStripButtonDuplicateVM
+			// toolStripSeparator3
 			// 
-			this.toolStripButtonDuplicateVM.Image = global::KVMWC.Images.duplicate;
-			this.toolStripButtonDuplicateVM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.toolStripButtonDuplicateVM.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButtonDuplicateVM.Name = "toolStripButtonDuplicateVM";
-			this.toolStripButtonDuplicateVM.Size = new System.Drawing.Size(220, 27);
-			this.toolStripButtonDuplicateVM.Text = "Duplicate VM";
-			this.toolStripButtonDuplicateVM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.toolStripButtonDuplicateVM.Click += new System.EventHandler(this.ToolStripButtonDuplicateVMClick);
+			this.toolStripSeparator3.Name = "toolStripSeparator3";
+			this.toolStripSeparator3.Size = new System.Drawing.Size(220, 6);
+			// 
+			// toolStripButtonOpenConsole
+			// 
+			this.toolStripButtonOpenConsole.Image = global::KVMWC.Images.console;
+			this.toolStripButtonOpenConsole.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.toolStripButtonOpenConsole.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButtonOpenConsole.Name = "toolStripButtonOpenConsole";
+			this.toolStripButtonOpenConsole.Size = new System.Drawing.Size(220, 27);
+			this.toolStripButtonOpenConsole.Text = "Open Console";
+			this.toolStripButtonOpenConsole.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.toolStripButtonOpenConsole.Click += new System.EventHandler(this.ToolStripButtonOpenConsoleClick);
 			// 
 			// ProgramForm
 			// 

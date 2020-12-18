@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>This program uses "plink.exe" which is created by Simon Tatham (creator of putty and other useful programs we could not imagine world without it - Many thanks).
+    <value>This program uses "plink.exe" and "putty.exe" which is created by Simon Tatham (creator of useful programs we could not imagine world without it - Many thanks).
 
 Author does not take any responsibility for damages of end-user computer or network. If you like this program, you can donate.</value>
   </data>

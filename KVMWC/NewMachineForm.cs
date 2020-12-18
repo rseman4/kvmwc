@@ -48,7 +48,7 @@ namespace KVMWC
 		{
 			string vmName = textBoxNewVMName.Text.Replace(" ", "_");
 			//string createDiskCommand = "sudo qemu-img create -f qcow2 "+ vmName +".qcow2 " + textBoxNewVMDisk.Text;
-			string mainCommand = "sudo virt-install  --name "+ vmName +"  --description '"+ richTextBoxNewVMDescription.Text +"' --ram="+ textBoxNewVMRAM.Text +" --vcpus="+ textBoxNewVMCPUCores.Text +" --os-type="+ comboBoxNewVMOSType.Text +" --os-variant="+ comboBoxNewVMOSVariant.Text +" --disk path='/var/lib/libvirt/images/"+ vmName +".qcow2',bus=virtio,size="+ textBoxNewVMDisk.Text +" --location "+ textBoxNewVMISOPath.Text +" --network type=direct,source=eno1,source_mode=bridge,model=virtio --noautoconsole";
+			string mainCommand = "sudo virt-install  --name "+ vmName +"  --description '"+ richTextBoxNewVMDescription.Text +"' --ram="+ textBoxNewVMRAM.Text +" --vcpus="+ textBoxNewVMCPUCores.Text +" --os-type="+ comboBoxNewVMOSType.Text +" --os-variant="+ comboBoxNewVMOSVariant.Text +" --disk path='/var/lib/libvirt/images/"+ vmName +".qcow2',bus=virtio,size="+ textBoxNewVMDisk.Text +" --location "+ textBoxNewVMISOPath.Text +" --network type=direct,source=eno1,source_mode=bridge,model=virtio --extra-args='console=ttyS0' --noautoconsole";
 			string autostartEnabled = (checkBoxNewVMAutostart.Checked) ? "sudo virsh autostart " + vmName : "";
 			string[] commands = {mainCommand, autostartEnabled};
 			return commands;

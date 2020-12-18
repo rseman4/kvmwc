@@ -12,7 +12,6 @@ Prerequisities:
 <username_here> ALL=NOPASSWD: /bin/virsh     
 <username_here> ALL=NOPASSWD: /usr/bin/virsh     
 <username_here> ALL=NOPASSWD: /usr/bin/virt-install     
+<username_here> ALL=NOPASSWD: /usr/bin/virt-clone     
 
-3.) Download plink.exe and place it to the program root
-
-4.) Enjoy.
+3.) Enjoy.

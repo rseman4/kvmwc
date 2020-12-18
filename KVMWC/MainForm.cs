@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Net;
 using System.IO;
 
 namespace KVMWC
@@ -28,6 +29,46 @@ namespace KVMWC
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
+			ServicePointManager.Expect100Continue = true;
+			ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+			
+			if(!File.Exists(@"plink.exe") || !File.Exists(@"putty.exe"))
+			{
+				DialogResult clientResult = MessageBox.Show("This program uses third-party programs like plink.exe and putty.exe. Would you like me to download it for you?\n\nBy continuing you agree with all licence agreements of third-party programs distributor.",
+                "Missing putty.exe or plink.exe",
+                MessageBoxButtons.YesNo);
+				if(clientResult == DialogResult.Yes)
+				{
+					try
+					{
+						if(!File.Exists(@"plink.exe"))
+						{
+							using (var client = new WebClient())
+							{
+							    client.DownloadFile("https://the.earth.li/~sgtatham/putty/latest/w32/plink.exe", "plink.exe");
+							}
+						}
+						if(!File.Exists(@"putty.exe"))
+						{
+							using (var client = new WebClient())
+							{
+							    client.DownloadFile("https://the.earth.li/~sgtatham/putty/latest/w32/putty.exe", "putty.exe");
+							}
+						}
+					}
+					catch(Exception e)
+					{
+						MessageBox.Show(e.ToString());
+						Environment.Exit(1);
+					}
+				}
+				else
+				{
+					MessageBox.Show("Unable to proceed without plink.exe and putty.exe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					Environment.Exit(1);
+				}
+			}
+			
 			string path = @"connection.ini";
 	        if(File.Exists(path))
 	        {

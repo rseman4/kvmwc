@@ -11,7 +11,9 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using System.IO;
 using System.Xml;
 using System.Xml.XPath;
@@ -22,6 +24,8 @@ namespace KVMWC
 	/// <summary>
 	/// Description of LOL.
 	/// </summary>
+	/// 
+	
 	public partial class ProgramForm : Form
 	{
 		private static string HOST;
@@ -48,14 +52,14 @@ namespace KVMWC
 			
 		}
 		
-		private Timer timer1; 
-		public void InitTimer()
-		{
-		    timer1 = new Timer();
-		    timer1.Tick += new EventHandler(timer1_Tick);
-		    timer1.Interval = LIST_UPDATE_TIMER;
-		    timer1.Start();
-		}
+//		private Timer timer1; 
+//		public void InitTimer()
+//		{
+//		    timer1 = new Timer();
+//		    timer1.Tick += new EventHandler(timer1_Tick);
+//		    timer1.Interval = LIST_UPDATE_TIMER;
+//		    timer1.Start();
+//		}
 		private void timer1_Tick(object sender, EventArgs e)
 		{
 		    UpdateVirtualMachineList();
@@ -447,6 +451,30 @@ namespace KVMWC
 		    {  
 		        MessageBox.Show("No data to be exported.", "Info");  
 		    }  
+		}
+		void ToolStripButtonOpenConsoleClick(object sender, EventArgs e)
+		{
+			string vmName = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+			
+			if(!String.IsNullOrEmpty(vmName))
+			{
+				Process cmd = new Process();
+				cmd.StartInfo.FileName = @"putty.exe";
+			    cmd.StartInfo.UseShellExecute = false;
+			    cmd.StartInfo.Arguments = "-ssh "+ USERNAME +"@" + HOST + " -pw "+ PASSWORD;
+			    cmd.EnableRaisingEvents = true;
+			    
+			    cmd.Start();
+			    while(String.IsNullOrEmpty(cmd.MainWindowTitle))
+				{
+				    Thread.Sleep(100);
+				    cmd.Refresh();
+				}
+			    SendKeys.Send("clear");
+			    SendKeys.Send("{ENTER}");
+			    SendKeys.Send("sudo virsh console " + vmName);
+            	SendKeys.Send("{ENTER}");	
+			}
 		}
 	}
 }
